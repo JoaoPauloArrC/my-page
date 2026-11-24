@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dicionário simples e interativo de dinossauros.">
+  <title>DinoPedia — Dicionário de Dinossauros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar container" aria-label="Navegação principal">
+      <a class="logo" href="#inicio" aria-label="DinoPedia início">🦖 DinoPedia</a>
+      <a class="nav-link" href="#dinossauros">Explorar dinossauros</a>
+    </nav>
+
+    <div class="hero-content container" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">Dicionário pré-histórico</span>
+        <h1>Conheça os gigantes que dominaram a Terra.</h1>
+        <p>Pesquise espécies, descubra seus períodos e aprenda curiosidades sobre os dinossauros mais fascinantes.</p>
+        <a class="button primary-button" href="#dinossauros">Começar a explorar</a>
+      </div>
+      <div class="hero-dino" aria-hidden="true">🦕</div>
+    </div>
+  </header>
+
+  <main class="container" id="dinossauros">
+    <section class="section-heading">
+      <div>
+        <span class="eyebrow">Explore a coleção</span>
+        <h2>Dicionário de dinossauros</h2>
+        <p id="result-count">Carregando espécies...</p>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="Filtros dos dinossauros">
+      <label class="search-box">
+        <span class="visually-hidden">Pesquisar dinossauro</span>
+        <span aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" placeholder="Pesquisar por nome..." autocomplete="off">
+      </label>
+      <label>
+        <span class="visually-hidden">Filtrar por período</span>
+        <select id="period-filter">
+          <option value="todos">Todos os períodos</option>
+          <option value="triassico">Triássico</option>
+          <option value="jurassico">Jurássico</option>
+          <option value="cretaceo">Cretáceo</option>
+        </select>
+      </label>
+      <button class="button secondary-button" id="clear-filters" type="button">Limpar filtros</button>
+    </section>
+
+    <section class="dino-grid" id="dino-grid" aria-live="polite"></section>
+    <p class="empty-state" id="empty-state" hidden>Nenhum dinossauro encontrado. Tente outro nome ou período.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <strong>🦖 DinoPedia</strong>
+      <span>Feito para quem ama a pré-história.</span>
+    </div>
+  </footer>
+
+  <dialog class="dino-dialog" id="dino-dialog">
+    <button class="close-dialog" id="close-dialog" type="button" aria-label="Fechar detalhes">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
